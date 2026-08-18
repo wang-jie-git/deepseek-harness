@@ -1,0 +1,27 @@
+# My Local Plugins - Cordis Configuration
+# 直接在 fork 仓库中使用本地插件
+
+version: 1
+
+# 使用 web profile 作为基础，添加你的插件
+profiles:
+  - id: my-enhanced-web
+    extends: web
+    bundles:
+      - bundle: dsh-base
+      - bundle: dsh-web-app
+    plugins:
+      # 加载本地插件（相对路径）
+      - id: my-tool
+        source: ./packages/local/my-tool/src/index.ts
+
+# 如果不需要完整 web UI，可以用 headless profile
+# profiles:
+#   - id: my-headless
+#     extends: headless
+#     bundles:
+#       - bundle: dsh-base
+#       - bundle: dsh-headless
+#     plugins:
+#       - id: my-tool
+#         source: ./packages/local/my-tool/src/index.ts

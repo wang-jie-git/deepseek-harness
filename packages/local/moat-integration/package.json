@@ -1,0 +1,49 @@
+{
+  "name": "@deepseek-ai/dsh-moat-integration",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DeepSeek Harness integration with Moat code quality checker",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b && tsdown",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "moat": "moat check --quick"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "workspace:^",
+    "@deepseek-ai/dsh-tools": "workspace:*",
+    "@deepseek-ai/schemastery": "workspace:*"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "workspace:^",
+    "@deepseek-ai/dsh-tools": "workspace:*",
+    "@deepseek-ai/schemastery": "workspace:*",
+    "typescript": "^6.0.0",
+    "vitest": "^4.0.0",
+    "tsdown": "^0.22.0"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/invariant.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "moat",
+    "code-quality",
+    "security",
+    "linting"
+  ],
+  "author": "wangjiezhong <523362775@qq.com>",
+  "license": "MIT"
+}

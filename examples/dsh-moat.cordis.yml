@@ -1,0 +1,18 @@
+version: 1
+
+# DSH + Moat Integration — 示例配置
+# 在开发 fork 仓库中直接加载本地插件
+
+profiles:
+  - id: dsh-moat
+    extends: headless
+    bundles:
+      - bundle: dsh-base
+      - bundle: dsh-headless
+    plugins:
+      # 加载 Moat 集成插件
+      - id: moat-integration
+        source: ./packages/local/moat-integration/src/index.ts
+        config:
+          # 配置
+          mode: quick
